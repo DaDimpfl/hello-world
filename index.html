@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <title></title>
+      <style type="text/css">
+      
+        .color-red {color: red;}
+
+      </style>
+  </head>
+    
+    
+
+    <body>
+        <div id="root">
+            <ul>
+
+              <li v-for="name in names" v-text="name"></li>
+
+            </ul>
+
+            <input id="input" type="text" v-model="newName">
+            <button v-on:click="addName"> Add Name</button>
+          </div>
+
+          <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  
+
+          <script>
+          
+          var app = new vue({
+
+            el: '#root',
+            data: {
+              newName: '',
+              names: ['joe','Mary','Jane']
+            },
+            methods: {
+              addName(){
+                this.names.push(this.newName);
+              }
+            }
+
+          })
+
+          </script>
+    </body>
+     
+ 
+</html>
